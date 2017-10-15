@@ -1,4 +1,4 @@
-package com.teqsquash.buddyshop;
+package com.teqsquash.buddyshop.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -18,6 +18,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,6 +28,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.teqsquash.buddyshop.R;
+import com.teqsquash.buddyshop.preference.PreferenceManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -282,6 +286,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailView.setAdapter(adapter);
     }
 
+    private void setLoggedIn() {
+        Log.e("PREF", String.valueOf(PreferenceManager.getSharedPreferencesInstance().getBoolean(getString(R.string.logout_key), true)));
+        PreferenceManager.getSharedPreferencesInstance().edit().putBoolean(getString(R.string.logout_key), false).apply();
+        Log.e("PREF", String.valueOf(PreferenceManager.getSharedPreferencesInstance().getBoolean(getString(R.string.logout_key), true)));
+    }
 
     private interface ProfileQuery {
         String[] PROJECTION = {
@@ -326,8 +335,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 }
             }
 
-            Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(mainIntent);
+            setLoggedIn();
+
+            Intent profileIntent = new Intent(LoginActivity.this, MyProfileActivity.class);
+            startActivity(profileIntent);
+            finish();
             return true;
         }
 

@@ -18,6 +18,12 @@
     <string name="dummy_content">BUDDY SHOP</string>
     <string name="title_activity_login">Sign in</string>
 
+    <!-- Preference keys -->
+    <string name="logout_key">pref_logout_key</string>
+
+    <!-- Preference labels -->
+    <string name="label_preference_logout">Logout</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -30,5 +36,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- List view empty messages -->
+    <string name="emptyList">Add lists using the add button at the bottom.</string>
+    <string name="emptyGroups">Add groups using the add button at the bottom.</string>
+    <string name="emptyProfile">Update your profile.</string>
 
 </resources>
