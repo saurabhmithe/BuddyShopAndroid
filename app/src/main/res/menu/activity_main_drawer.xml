@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_my_profile"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="@string/label_nav_my_profile" />
+        <item
+            android:id="@+id/nav_groups"
+            android:icon="@drawable/ic_group_black_24dp"
+            android:title="@string/label_nav_groups" />
+        <item
+            android:id="@+id/nav_lists"
+            android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+            android:title="@string/label_nav_lists" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/label_nav_settings" />
+    </group>
+
+    <item
+        android:title="Communicate"
+        android:visible="false">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
